@@ -1,12 +1,12 @@
 <?php
 // Application middleware
 
-// e.g: $app->add(new \Slim\Csrf\Guard);
-
+$container = $app->getContainer();
+$settings = $container->get('settings');
 $app->add(new Tuupola\Middleware\HttpBasicAuthentication([
-    "path" => "/v1/auth/token", /* or ["/admin", "/api"] */
+    "path" => "/v1/auth/token",
     "realm" => "Protected",
     "users" => [
-        "test" => "test"
+        $settings['auth']['username'] => $settings['auth']['password']
     ]
 ]));
