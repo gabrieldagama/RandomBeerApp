@@ -3,10 +3,16 @@
 
 $container = $app->getContainer();
 
+$container->register(new \RandomBeerApp\Services\Auth\AuthServiceProvider());
+
 // view renderer
 $container['renderer'] = function ($c) {
     $settings = $c->get('settings')['renderer'];
     return new Slim\Views\PhpRenderer($settings['template_path']);
+};
+
+$container['responseBodyBuilder'] = function ($c) {
+    return new RandomBeerApp\Models\Api\ResponseBodyBuilder();
 };
 
 // monolog
