@@ -3,7 +3,6 @@
 namespace RandomBeerApp\Services\Auth;
 
 use RandomBeerApp\Services\Auth\AuthService\TokenGenerator;
-use RandomBeerApp\Services\Auth\AuthService\TokenValidator;
 
 /**
  * Class AuthService
@@ -36,17 +35,4 @@ class AuthService
             $this->settings['auth']['username']
         );
     }
-
-    /**
-     * @param string $token
-     * @return bool
-     */
-    public function validateToken($token)
-    {
-        return TokenValidator::validateToken(
-            $token,
-            $this->settings['jwt']['secret']
-        );
-    }
-
 }

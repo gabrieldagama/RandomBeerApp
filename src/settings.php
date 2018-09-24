@@ -25,10 +25,6 @@ return [
         ],
         'jwt'  => [
             'secret' => getenv('JWT_SECRET'),
-            'secure' => false,
-            "header" => "Authorization",
-            "regexp" => "/Token\s+(.*)$/i",
-            'passthrough' => ['OPTIONS']
         ],
     ],
 ];

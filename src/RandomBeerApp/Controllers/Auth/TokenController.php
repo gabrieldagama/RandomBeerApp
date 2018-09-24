@@ -46,7 +46,7 @@ class TokenController extends AbstractController
         $this->responseBodyBuilder->setMessage(self::SUCCESS_MSG);
         $this->responseBodyBuilder->setData([
             'token' => $this->authService->generateToken()
-            ]);
+        ]);
         $responseBody = $this->responseBodyBuilder->build();
         $response = $response->withJson($responseBody->toArray(), self::HTTP_CREATED);
         return $response;

@@ -12,7 +12,7 @@ services:
       - php
 
   php:
-    image: php:7.2-fpm
+    image: nanoninja/php-fpm:7.2
     volumes:
       - ./../:/var/www/html
 
