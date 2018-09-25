@@ -1,6 +1,6 @@
 <?php
 
-namespace RandomBeerApp\Model\Repository;
+namespace RandomBeerApp\Repository;
 
 use Psr\Log\InvalidArgumentException;
 use RandomBeerApp\Helper\Converter\ObjectToArray;
@@ -11,7 +11,7 @@ use \Exception;
 
 /**
  * Class AbstractRepository
- * @package RandomBeerApp\Model\Repository
+ * @package RandomBeerApp\Repository
  */
 class AbstractRepository
 {

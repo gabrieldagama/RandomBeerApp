@@ -1,13 +1,21 @@
 <?php
 
-namespace RandomBeerApp\Model\Repository;
+namespace RandomBeerApp\Repository;
 
 use Interop\Container\ContainerInterface;
 
+/**
+ * Class BeerRepository
+ * @package RandomBeerApp\Repository
+ */
 class BeerRepository extends AbstractRepository implements RepositoryInterface
 {
     const COLLECTION_NAME = 'beers';
 
+    /**
+     * BeerRepository constructor.
+     * @param ContainerInterface $container
+     */
     public function __construct(ContainerInterface $container)
     {
         parent::__construct(

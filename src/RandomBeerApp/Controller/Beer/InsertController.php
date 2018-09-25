@@ -4,9 +4,8 @@ namespace RandomBeerApp\Controller\Beer;
 
 use Interop\Container\ContainerInterface;
 use RandomBeerApp\Controller\AbstractController;
-use RandomBeerApp\Model\Api\ResponseBodyBuilder;
 use RandomBeerApp\Model\Entity\FactoryInterface;
-use RandomBeerApp\Model\Repository\RepositoryInterface;
+use RandomBeerApp\Repository\RepositoryInterface;
 use Slim\Http\Request;
 use Slim\Http\Response;
 

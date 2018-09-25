@@ -1,10 +1,10 @@
 <?php
 
-namespace RandomBeerApp\Model\Repository;
+namespace RandomBeerApp\Repository;
 
 /**
  * Interface RepositoryInterface
- * @package RandomBeerApp\Model\Entity
+ * @package RandomBeerApp\Repository
  */
 interface RepositoryInterface
 {

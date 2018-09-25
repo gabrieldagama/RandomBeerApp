@@ -23,7 +23,7 @@ $container['beerFactory'] = function ($c) {
 
 // beer repository
 $container['beerRepository'] = function ($c) {
-    return new \RandomBeerApp\Model\Repository\BeerRepository($c);
+    return new \RandomBeerApp\Repository\BeerRepository($c);
 };
 
 // mongo
