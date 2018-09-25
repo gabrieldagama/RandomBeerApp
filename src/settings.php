@@ -26,5 +26,12 @@ return [
         'jwt'  => [
             'secret' => getenv('JWT_SECRET'),
         ],
+        'db'   => [
+            'host' => 'mongo',
+            'port' => '27017',
+            'user' => 'root',
+            'pwd' => 'admin',
+            'db_name' => 'randombeerapp'
+        ]
     ],
 ];

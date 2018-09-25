@@ -8,6 +8,11 @@ namespace RandomBeerApp\Model\Entity;
  */
 class Beer implements Beverage
 {
+
+    /**
+     * @var string
+     */
+    private $id;
     /**
      * @var string
      */
@@ -24,6 +29,22 @@ class Beer implements Beverage
      * @var string
      */
     private $producerLocation;
+
+    /**
+     * @return string
+     */
+    public function getId(): ?string
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     */
+    public function setId(string $id)
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return string
