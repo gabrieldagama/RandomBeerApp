@@ -3,6 +3,7 @@
 namespace RandomBeerApp\Controller;
 
 use RandomBeerApp\Model\Api\ResponseBodyBuilder;
+use RandomBeerApp\Helper\Converter\ObjectToArray;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Interop\Container\ContainerInterface;
@@ -74,13 +75,19 @@ abstract class AbstractController implements ControllerInterface
     protected $responseBodyBuilder;
 
     /**
+     * @var ObjectToArray
+     */
+    protected $objectToArrayConverter;
+
+    /**
      * AbstractController constructor.
      * @param ContainerInterface $container
      */
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-        $this->responseBodyBuilder = $this->container->get('responseBodyBuilder');
+        $this->responseBodyBuilder = $this->container->get("responseBodyBuilder");
+        $this->objectToArrayConverter = $this->container->get("converter");
     }
 
     /**

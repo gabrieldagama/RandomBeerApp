@@ -27,7 +27,10 @@ class RandomController extends AbstractController
         $this->responseBodyBuilder->setStatus(self::SUCCESS_STATUS);
         $this->responseBodyBuilder->setMessage('testing');
         $responseBody = $this->responseBodyBuilder->build();
-        $response = $response->withJson($responseBody->toArray(), self::HTTP_OK);
+        $response = $response->withJson(
+            $this->objectToArrayConverter->convert($responseBody),
+            self::HTTP_INTERNAL_SERVER_ERROR
+        );
         return $response;
     }
 }

@@ -70,18 +70,4 @@ class ResponseBody
     {
         $this->message = $message;
     }
-
-    /**
-     * @return array
-     */
-    public function toArray()
-    {
-        $responseArray = [
-            'status' => $this->getStatus(),
-            'message' => $this->getMessage(),
-            'data' => $this->getData()
-        ];
-
-        return $responseArray;
-    }
 }

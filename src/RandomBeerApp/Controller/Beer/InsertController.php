@@ -26,6 +26,10 @@ class InsertController extends AbstractController
      */
     private $beerRepository;
 
+    /**
+     * InsertController constructor.
+     * @param ContainerInterface $container
+     */
     public function __construct(ContainerInterface $container)
     {
         parent::__construct($container);
@@ -54,13 +58,19 @@ class InsertController extends AbstractController
             $this->responseBodyBuilder->setStatus(self::SUCCESS_STATUS);
             $this->responseBodyBuilder->setMessage('Beer created successfully.');
             $responseBody = $this->responseBodyBuilder->build();
-            $response = $response->withJson($responseBody->toArray(), self::HTTP_CREATED);
+            $response = $response->withJson(
+                $this->objectToArrayConverter->convert($responseBody),
+                self::HTTP_INTERNAL_SERVER_ERROR
+            );
             return $response;
         }
         $this->responseBodyBuilder->setStatus(self::ERROR_STATUS);
         $this->responseBodyBuilder->setMessage('There was an error creating beer object.');
         $responseBody = $this->responseBodyBuilder->build();
-        $response = $response->withJson($responseBody->toArray(), self::HTTP_INTERNAL_SERVER_ERROR);
+        $response = $response->withJson(
+            $this->objectToArrayConverter->convert($responseBody),
+            self::HTTP_INTERNAL_SERVER_ERROR
+        );
         return $response;
     }
 }
