@@ -11,7 +11,7 @@ $app->add(new Tuupola\Middleware\JwtAuthentication([
     'path' => '/v1',
     'relaxed' => ['localhost', 'web'],
     'secure' => true,
-    'ignore' => ['/v1/auth/token'],
+    'ignore' => ['/v1/auth/token', '/'],
     'secret' => $settings['jwt']['secret']
 ]));
 

@@ -1,27 +1,29 @@
-# Slim Framework 3 Skeleton Application
-
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
-
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+# RandomBeerApp
+Requirements to run the applicaiton:
+* Docker and Docker Compose
 
 ## Install the Application
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+Run this command from the directory in which you want to install the application. First, clone the repository:
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+    git clone git@github.com:gabrieldagama/RandomBeerApp.git
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+Then, get inside the application folder and then inside docker folder, there you must run docker-compose up, please be aware that this project uses port 80:
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
+    cd RandomBeerApp/docker && docker-compose up -d
 
-To run the application in development, you can run these commands 
+Once the containers are running, you need to run the command below to populate the database:
 
-	cd [my-app-name]
-	php composer.phar start
+    docker exec -it randombeerapp_php_1 php bin/cli.php deploy:sample-data
 
-Run this command in the application directory to run the test suite
+Now you can access the application in your browser: http://localhost/
 
-	php composer.phar test
+If you prefer you can also use the postman collection to try and test the endpoints in isolation from the frontend.
 
-That's it! Now go build something cool.
+Improvements:
+* Improve logs, create logs configuration that would allow to enable and disable it as needed.
+* Improve exception handling, create specific exceptions for specific issues.
+* Improve abstraction between mongodb and repositories, current repositories are highly dependent in mongo class.
+* Create more unit tests to increase coverage.
+* Insert more controllers to handle other API operations, like update (PUT) and delete (DELETE).
+* Improve frontend piece of the application.

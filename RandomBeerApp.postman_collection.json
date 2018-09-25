@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "42abca5e-d76c-485e-8c67-289ed18b153c",
+		"name": "RandomBeerApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "apipwd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "apiuser",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/v1/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRandomBeer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1Mzc5MTQ3MDgsImV4cCI6MTUzNzkyMTkwOCwianRpIjoiM3hydngxT1RTeHVlcURXNU9Wam5qQT09IiwiaXNzIjoiaHR0cDpcL1wvcmFuZG9tYmVlcmFwcC5jb20iLCJzdWIiOiJhcGl1c2VyIn0.k33OS5k5AUrdpTL8FXPwNIY-bMJa2Shi-s5R5Ou5I2M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/v1/beer/random",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"beer",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertBeer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1Mzc5MTE4OTcsImV4cCI6MTUzNzkxOTA5NywianRpIjoiT1dqXC9XSHdzZXFoTnR5Y1R2OVNCXC9RPT0iLCJpc3MiOiJodHRwOlwvXC9yYW5kb21iZWVyYXBwLmNvbSIsInN1YiI6ImFwaXVzZXIifQ.MXT1uKsW6LM6T7Dop6FiokvUOkQa--9QggLOV8l-SSs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Guinness\",\"description\":\"Irish Dry Stout\",\"abv\":4.2,\"producerLocation\":\"Dublin\"}"
+				},
+				"url": {
+					"raw": "http://localhost/v1/beer/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"beer",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
