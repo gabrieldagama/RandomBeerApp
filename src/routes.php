@@ -1,7 +1,7 @@
 <?php
 
-use RandomBeerApp\Controllers\Auth\TokenController;
-use RandomBeerApp\Controllers\Beer\RandomController;
+use RandomBeerApp\Controller\Auth\TokenController;
+use RandomBeerApp\Controller\Beer\RandomController;
 
 // Routes
 $app->group('/v1', function () {

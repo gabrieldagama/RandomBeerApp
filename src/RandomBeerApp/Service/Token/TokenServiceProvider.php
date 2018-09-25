@@ -1,6 +1,6 @@
 <?php
 
-namespace RandomBeerApp\Services\Token;
+namespace RandomBeerApp\Service\Token;
 
 use Interop\Container\ContainerInterface;
 use Pimple\Container;
@@ -8,7 +8,7 @@ use Pimple\ServiceProviderInterface;
 
 /**
  * Class TokenServiceProvider
- * @package RandomBeerApp\Services\Token
+ * @package RandomBeerApp\Service\Token
  */
 class TokenServiceProvider implements ServiceProviderInterface
 {

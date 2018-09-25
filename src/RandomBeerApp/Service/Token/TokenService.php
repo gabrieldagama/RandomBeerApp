@@ -1,12 +1,12 @@
 <?php
 
-namespace RandomBeerApp\Services\Token;
+namespace RandomBeerApp\Service\Token;
 
-use RandomBeerApp\Services\Token\TokenService\TokenGenerator;
+use RandomBeerApp\Service\Token\TokenService\TokenGenerator;
 
 /**
  * Class TokenService
- * @package RandomBeerApp\Services\Auth
+ * @package RandomBeerApp\Service\Token
  */
 class TokenService
 {

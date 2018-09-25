@@ -1,12 +1,12 @@
 <?php
 
-namespace RandomBeerApp\Services\Token\TokenService;
+namespace RandomBeerApp\Service\Token\TokenService;
 
 use Firebase\JWT\JWT;
 
 /**
  * Class TokenGenerator
- * @package RandomBeerApp\Services\Token\TokenService
+ * @package RandomBeerApp\Service\Token\TokenService
  */
 class TokenGenerator
 {

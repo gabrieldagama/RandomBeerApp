@@ -1,10 +1,10 @@
 <?php
 
-namespace RandomBeerApp\Models\Entity;
+namespace RandomBeerApp\Model\Entity;
 
 /**
  * Class Beer
- * @package RandomBeerApp\Models\Entity
+ * @package RandomBeerApp\Model\Entity
  */
 class Beer implements Beverage
 {

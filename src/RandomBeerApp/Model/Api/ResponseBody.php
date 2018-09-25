@@ -1,7 +1,11 @@
 <?php
 
-namespace RandomBeerApp\Models\Api;
+namespace RandomBeerApp\Model\Api;
 
+/**
+ * Class ResponseBody
+ * @package RandomBeerApp\Model\Api
+ */
 class ResponseBody
 {
     /**

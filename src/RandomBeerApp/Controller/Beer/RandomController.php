@@ -1,15 +1,15 @@
 <?php
 
-namespace RandomBeerApp\Controllers\Beer;
+namespace RandomBeerApp\Controller\Beer;
 
-use RandomBeerApp\Controllers\AbstractController;
-use RandomBeerApp\Models\Api\ResponseBodyBuilder;
+use RandomBeerApp\Controller\AbstractController;
+use RandomBeerApp\Model\Api\ResponseBodyBuilder;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
 /**
  * Class RandomController
- * @package RandomBeerApp\Controllers\Auth
+ * @package RandomBeerApp\Controller\Beer
  */
 class RandomController extends AbstractController
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace RandomBeerApp\Controllers;
+namespace RandomBeerApp\Controller;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
 
 /**
  * Interface ControllerInterface
- * @package RandomBeerApp\Controllers
+ * @package RandomBeerApp\Controller
  */
 interface ControllerInterface
 {

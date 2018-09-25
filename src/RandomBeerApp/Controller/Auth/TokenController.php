@@ -1,17 +1,17 @@
 <?php
 
-namespace RandomBeerApp\Controllers\Auth;
+namespace RandomBeerApp\Controller\Auth;
 
 use Interop\Container\ContainerInterface;
-use RandomBeerApp\Controllers\AbstractController;
-use RandomBeerApp\Models\Api\ResponseBodyBuilder;
-use RandomBeerApp\Services\Token\TokenService;
+use RandomBeerApp\Controller\AbstractController;
+use RandomBeerApp\Model\Api\ResponseBodyBuilder;
+use RandomBeerApp\Service\Token\TokenService;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
 /**
- * Class TokenControler
- * @package RandomBeerApp\Controllers\Auth
+ * Class TokenController
+ * @package RandomBeerApp\Controller\Auth
  */
 class TokenController extends AbstractController
 {

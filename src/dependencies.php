@@ -3,7 +3,7 @@
 
 $container = $app->getContainer();
 
-$container->register(new \RandomBeerApp\Services\Token\TokenServiceProvider());
+$container->register(new \RandomBeerApp\Service\Token\TokenServiceProvider());
 
 // view renderer
 $container['renderer'] = function ($c) {
@@ -12,7 +12,7 @@ $container['renderer'] = function ($c) {
 };
 
 $container['responseBodyBuilder'] = function ($c) {
-    return new RandomBeerApp\Models\Api\ResponseBodyBuilder();
+    return new RandomBeerApp\Model\Api\ResponseBodyBuilder();
 };
 
 // monolog

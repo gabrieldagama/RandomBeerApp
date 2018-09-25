@@ -1,10 +1,10 @@
 <?php
 
-namespace RandomBeerApp\Services\Token;
+namespace RandomBeerApp\Service\Token;
 
 /**
  * Class TokenServiceFactory
- * @package RandomBeerApp\Services\Token
+ * @package RandomBeerApp\Service\Token
  */
 class TokenServiceFactory
 {
