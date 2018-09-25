@@ -32,7 +32,7 @@ class ResponseBodyBuilder
     /**
      * @return ResponseBody
      */
-    public function build()
+    public function build(): ResponseBody
     {
         $builtObject = $this->responseBody;
         $this->reset();
@@ -42,7 +42,7 @@ class ResponseBodyBuilder
     /**
      * @param bool $status
      */
-    public function setStatus($status)
+    public function setStatus(bool $status)
     {
         $this->responseBody->setStatus($status);
     }
@@ -50,7 +50,7 @@ class ResponseBodyBuilder
     /**
      * @param array $data
      */
-    public function setData($data)
+    public function setData(array $data)
     {
         $this->responseBody->setData($data);
     }
@@ -58,7 +58,7 @@ class ResponseBodyBuilder
     /**
      * @param string $message
      */
-    public function setMessage($message)
+    public function setMessage(string $message)
     {
         $this->responseBody->setMessage($message);
     }

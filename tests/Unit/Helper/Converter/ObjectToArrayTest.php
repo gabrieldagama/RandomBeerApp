@@ -6,8 +6,16 @@ use \PHPUnit\Framework\TestCase;
 use RandomBeerApp\Helper\Converter\ObjectToArray;
 use RandomBeerApp\Model\Entity\Beer;
 
+/**
+ * Class ObjectToArrayTest
+ * @package Tests\Unit\Helper\Converter
+ */
 class ObjectToArrayTest extends TestCase
 {
+
+    /**
+     * Testing object to array convert.
+     */
     public function testObjectToArray()
     {
         $object = new Beer();

@@ -6,9 +6,16 @@ use PHPUnit\Framework\TestCase;
 use RandomBeerApp\Helper\PopulateObject;
 use RandomBeerApp\Model\Entity\Beer;
 
+/**
+ * Class PopulateObjectTest
+ * @package Tests\Unit\Helper
+ */
 class PopulateObjectTest extends TestCase
 {
 
+    /**
+     * Testing populate object method.
+     */
     public function testPopulateObject()
     {
         $object = new Beer();

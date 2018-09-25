@@ -2,6 +2,8 @@
 
 namespace RandomBeerApp\Helper;
 
+use RandomBeerApp\Model\Entity\AbstractEntity;
+
 /**
  * Class ObjectToArray
  * @package RandomBeerApp\Helper\Converter
@@ -9,14 +11,14 @@ namespace RandomBeerApp\Helper;
 class PopulateObject
 {
     /**
-     * @param $object
-     * @param $data
-     * @return object
+     * @param AbstractEntity $object
+     * @param array $data
+     * @return AbstractEntity
      */
-    public function populate($object, $data)
+    public function populate(AbstractEntity $object, array $data): AbstractEntity
     {
         foreach ($data as $key => $value) {
-            $key = ($key !== "_id") ? $key : "id";
+            $key = ($key !== '_id') ? $key : 'id';
             $key = ucfirst($key);
             $object->{"set{$key}"}($value);
         }

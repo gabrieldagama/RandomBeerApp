@@ -9,11 +9,10 @@ namespace RandomBeerApp\Model\Entity;
  */
 class BeerFactory implements FactoryInterface
 {
-
     /**
      * @return Beer
      */
-    public function create()
+    public function create(): Beer
     {
         return new Beer();
     }

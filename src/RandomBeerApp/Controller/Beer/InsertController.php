@@ -4,8 +4,6 @@ namespace RandomBeerApp\Controller\Beer;
 
 use Interop\Container\ContainerInterface;
 use RandomBeerApp\Controller\AbstractController;
-use RandomBeerApp\Model\Entity\FactoryInterface;
-use RandomBeerApp\Repository\RepositoryInterface;
 use RandomBeerApp\Service\Beer\BeerService;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -16,7 +14,6 @@ use Slim\Http\Response;
  */
 class InsertController extends AbstractController
 {
-
     /**
      * @var BeerService
      */

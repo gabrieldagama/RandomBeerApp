@@ -10,7 +10,6 @@ use Interop\Container\ContainerInterface;
  */
 class BeerServiceFactory
 {
-
     /**
      * @param ContainerInterface $container
      * @return BeerService

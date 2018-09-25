@@ -21,13 +21,13 @@ class TokenGenerator
     public static function generateToken($secretKey, $appUrl, $apiUser)
     {
         $now = new \DateTime();
-        $future = new \DateTime("now +2 hours");
+        $future = new \DateTime('now +2 hours');
         $payload = [
-            "iat" => $now->getTimeStamp(),
-            "exp" => $future->getTimeStamp(),
-            "jti" => base64_encode(random_bytes(16)),
+            'iat' => $now->getTimeStamp(),
+            'exp' => $future->getTimeStamp(),
+            'jti' => base64_encode(random_bytes(16)),
             'iss' => $appUrl,
-            "sub" => $apiUser,
+            'sub' => $apiUser,
         ];
         $secret = $secretKey;
         $token = JWT::encode($payload, $secret, self::ENCRYPT_ALGORITH);

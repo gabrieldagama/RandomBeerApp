@@ -4,6 +4,7 @@ namespace RandomBeerApp\Service\Beer;
 
 use Interop\Container\ContainerInterface;
 use RandomBeerApp\Helper\PopulateObject;
+use RandomBeerApp\Model\Entity\Beer;
 use RandomBeerApp\Model\Entity\Beverage;
 use RandomBeerApp\Model\Entity\FactoryInterface;
 use RandomBeerApp\Repository\BeerRepository;
@@ -35,16 +36,16 @@ class BeerService
      */
     public function __construct(ContainerInterface $container)
     {
-        $this->beerFactory = $container->get("beer_factory");
+        $this->beerFactory = $container->get('beer_factory');
         $this->beerRepository = $container->get('beer_repository');
-        $this->populateObj = $container->get("populate_obj");
+        $this->populateObj = $container->get('populate_obj');
     }
 
     /**
      * @param array $data
      * @return bool
      */
-    public function createBeer($data)
+    public function createBeer(array $data): bool
     {
         $beer = $this->beerFactory->create();
         $beer = $this->populateObj->populate($beer, $data);
@@ -52,13 +53,13 @@ class BeerService
     }
 
     /**
-     * @return Beverage
+     * @return Beer
      */
-    public function getRandomBeer()
+    public function getRandomBeer(): Beer
     {
         $data = $this->beerRepository->getRandomBeer()->toArray()[0];
         $beer = $this->beerFactory->create();
-        $beer = $this->populateObj->populate($beer, $data);
+        $beer = $this->populateObj->populate($beer, (array)$data);
         return $beer;
     }
 }

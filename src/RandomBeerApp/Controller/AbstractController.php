@@ -86,8 +86,8 @@ abstract class AbstractController implements ControllerInterface
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-        $this->responseBodyBuilder = $this->container->get("response_body_builder");
-        $this->objectToArrayConverter = $this->container->get("converter");
+        $this->responseBodyBuilder = $this->container->get('response_body_builder');
+        $this->objectToArrayConverter = $this->container->get('converter');
     }
 
     /**
@@ -95,7 +95,7 @@ abstract class AbstractController implements ControllerInterface
      * @param Response $resp
      * @return Response
      */
-    public function __invoke(Request $req, Response $resp)
+    public function __invoke(Request $req, Response $resp): Response
     {
         return $this->execute($req, $resp);
     }

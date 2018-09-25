@@ -7,7 +7,7 @@ use RandomBeerApp\Helper\Converter\ObjectToArray;
 use Interop\Container\ContainerInterface;
 use MongoDB\Client;
 use RandomBeerApp\Helper\PopulateObject;
-use RandomBeerApp\Model\Entity\Beverage;
+use RandomBeerApp\Model\Entity\AbstractEntity;
 use RandomBeerApp\Model\Entity\FactoryInterface;
 use \Exception;
 
@@ -67,10 +67,10 @@ abstract class AbstractRepository
     }
 
     /**
-     * @param $object
+     * @param AbstractEntity $object
      * @return bool
      */
-    public function insert($object): bool
+    public function insert(AbstractEntity $object): bool
     {
         if (!is_object($object)) {
             throw new InvalidArgumentException('The argument must be an object');
@@ -86,10 +86,10 @@ abstract class AbstractRepository
     }
 
     /**
-     * @param $id
-     * @return Beverage
+     * @param string $id
+     * @return AbstractEntity
      */
-    public function get($id): Beverage
+    public function get(string $id): AbstractEntity
     {
         $data = $this->getCollection()->findOne(['_id' => $id]);
         $object = $this->objectFactory->create();
@@ -98,10 +98,10 @@ abstract class AbstractRepository
     }
 
     /**
-     * @param $id
+     * @param string $id
      * @return bool
      */
-    public function delete($id): bool
+    public function delete(string $id): bool
     {
         try {
             $this->getCollection()->deleteOne(['_id' => $id]);
@@ -112,11 +112,11 @@ abstract class AbstractRepository
     }
 
     /**
-     * @param $id
-     * @param $object
+     * @param string $id
+     * @param AbstractEntity $object
      * @return bool
      */
-    public function update($id, $object): bool
+    public function update(string $id, AbstractEntity $object): bool
     {
         $arrayData = $this->objectConverter->convert($object);
         try {

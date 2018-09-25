@@ -26,7 +26,7 @@ class ResponseBody
     /**
      * @return bool
      */
-    public function getStatus()
+    public function getStatus(): bool
     {
         return $this->status;
     }
@@ -34,7 +34,7 @@ class ResponseBody
     /**
      * @param bool $status
      */
-    public function setStatus($status)
+    public function setStatus(bool $status)
     {
         $this->status = $status;
     }
@@ -42,7 +42,7 @@ class ResponseBody
     /**
      * @return array
      */
-    public function getData()
+    public function getData(): ?array
     {
         return $this->data;
     }
@@ -50,7 +50,7 @@ class ResponseBody
     /**
      * @param array $data
      */
-    public function setData($data)
+    public function setData(array $data)
     {
         $this->data = $data;
     }
@@ -58,7 +58,7 @@ class ResponseBody
     /**
      * @return string
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -66,7 +66,7 @@ class ResponseBody
     /**
      * @param string $message
      */
-    public function setMessage($message)
+    public function setMessage(string $message)
     {
         $this->message = $message;
     }

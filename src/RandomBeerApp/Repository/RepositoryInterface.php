@@ -2,7 +2,7 @@
 
 namespace RandomBeerApp\Repository;
 
-use RandomBeerApp\Model\Entity\Beverage;
+use RandomBeerApp\Model\Entity\AbstractEntity;
 
 /**
  * Interface RepositoryInterface
@@ -11,27 +11,27 @@ use RandomBeerApp\Model\Entity\Beverage;
 interface RepositoryInterface
 {
     /**
-     * @param $object
+     * @param AbstractEntity $object
      * @return bool
      */
-    public function insert($object): bool;
+    public function insert(AbstractEntity $object): bool;
 
     /**
-     * @param $id
-     * @return Beverage
+     * @param string $id
+     * @return AbstractEntity
      */
-    public function get($id): Beverage;
+    public function get(string $id): AbstractEntity;
 
     /**
-     * @param $id
+     * @param string $id
      * @return bool
      */
-    public function delete($id): bool;
+    public function delete(string $id): bool;
 
     /**
-     * @param $id
-     * @param $object
+     * @param string $id
+     * @param AbstractEntity $object
      * @return bool
      */
-    public function update($id, $object): bool;
+    public function update(string $id, AbstractEntity $object): bool;
 }

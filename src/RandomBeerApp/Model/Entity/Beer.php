@@ -6,9 +6,8 @@ namespace RandomBeerApp\Model\Entity;
  * Class Beer
  * @package RandomBeerApp\Model\Entity
  */
-class Beer implements Beverage
+class Beer extends AbstractEntity implements Beverage
 {
-
     /**
      * @var string
      */
@@ -31,7 +30,7 @@ class Beer implements Beverage
     private $producerLocation;
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string
     {
@@ -57,7 +56,7 @@ class Beer implements Beverage
     /**
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->name = $name;
     }
@@ -73,13 +72,13 @@ class Beer implements Beverage
     /**
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
 
     /**
-     * @return int
+     * @return float
      */
     public function getAbv(): float
     {
@@ -87,9 +86,9 @@ class Beer implements Beverage
     }
 
     /**
-     * @param int $abv
+     * @param float $abv
      */
-    public function setAbv($abv)
+    public function setAbv(float $abv)
     {
         $this->abv = $abv;
     }
@@ -105,7 +104,7 @@ class Beer implements Beverage
     /**
      * @param string $producerLocation
      */
-    public function setProducerLocation($producerLocation)
+    public function setProducerLocation(string $producerLocation)
     {
         $this->producerLocation = $producerLocation;
     }

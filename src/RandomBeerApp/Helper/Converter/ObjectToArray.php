@@ -12,11 +12,11 @@ use \ReflectionObject;
 class ObjectToArray
 {
     /**
-     * @param $object
+     * @param object $object
      * @return array
      * @throws InvalidArgumentException
      */
-    public function convert($object)
+    public function convert(object $object): array
     {
         if (!is_object($object)) {
             throw new InvalidArgumentException('The argument must be an object');
@@ -25,7 +25,7 @@ class ObjectToArray
         $newArray = [];
         $propertyArray = $refObj->getProperties();
         foreach ($propertyArray as $property) {
-            $propertyName = ($property->getName() !== "_id") ? $property->getName() : 'id';
+            $propertyName = ($property->getName() !== '_id') ? $property->getName() : 'id';
             $propertyName = ucfirst($propertyName);
             $newArray[$property->getName()] = $object->{"get{$propertyName}"}();
         }

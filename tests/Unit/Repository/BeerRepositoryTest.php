@@ -15,6 +15,10 @@ use RandomBeerApp\Model\Entity\BeerFactory;
 use PHPUnit_Framework_MockObject_MockObject;
 use RandomBeerApp\Repository\BeerRepository;
 
+/**
+ * Class BeerRepositoryTest
+ * @package Tests\Unit\Repository
+ */
 class BeerRepositoryTest extends TestCase
 {
     /**
@@ -62,6 +66,9 @@ class BeerRepositoryTest extends TestCase
      */
     private $beerRepository;
 
+    /**
+     * Creating mocks.
+     */
     protected function setUp()
     {
         $this->container = $this->createMock(Container::class);
@@ -94,6 +101,9 @@ class BeerRepositoryTest extends TestCase
         $this->beerRepository = new BeerRepository($this->container);
     }
 
+    /**
+     * Testing the insert function.
+     */
     public function testInsert()
     {
         $beer = new Beer();
@@ -113,6 +123,9 @@ class BeerRepositoryTest extends TestCase
         $this->assertEquals(true, $return);
     }
 
+    /**
+     * Testing exception in the insert function.
+     */
     public function testExceptionInsert()
     {
         $beer = 'StringTest';
@@ -120,6 +133,9 @@ class BeerRepositoryTest extends TestCase
         $this->beerRepository->insert($beer);
     }
 
+    /**
+     * Testing the get function.
+     */
     public function testGet()
     {
         $beer = new Beer();
@@ -142,7 +158,10 @@ class BeerRepositoryTest extends TestCase
         $this->assertInstanceOf(Beer::class, $result);
     }
 
-
+    /**
+     * @param $parameter
+     * @return array|Client|null|PHPUnit_Framework_MockObject_MockObject|ObjectToArray|PopulateObject|BeerFactory
+     */
     public function containerCallback($parameter)
     {
         switch ($parameter) {
