@@ -25,7 +25,8 @@ class ObjectToArray
         $newArray = [];
         $propertyArray = $refObj->getProperties();
         foreach ($propertyArray as $property) {
-            $propertyName = ucfirst($property->getName());
+            $propertyName = ($property->getName() !== "_id") ? $property->getName() : 'id';
+            $propertyName = ucfirst($propertyName);
             $newArray[$property->getName()] = $object->{"get{$propertyName}"}();
         }
         return $newArray;

@@ -21,7 +21,17 @@ class BeerRepository extends AbstractRepository implements RepositoryInterface
         parent::__construct(
             $container,
             self::COLLECTION_NAME,
-            $container->get('beerFactory')
+            $container->get('beer_factory')
         );
+    }
+
+    /**
+     * @return \Traversable
+     */
+    public function getRandomBeer()
+    {
+        return $this->getCollection()->aggregate([[
+            '$sample' => ['size' => 1]
+        ]]);
     }
 }

@@ -17,7 +17,7 @@ class TokenServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $pimple)
     {
-        $pimple['token'] = function (ContainerInterface $c) {
+        $pimple['token_service'] = function (ContainerInterface $c) {
             return TokenServiceFactory::create($c->get('settings'));
         };
     }

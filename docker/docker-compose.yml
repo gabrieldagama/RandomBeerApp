@@ -20,7 +20,7 @@ services:
     image: "composer"
     volumes:
       - ./../:/app
-    command: install
+    command: install --ignore-platform-reqs
 
   mongo:
     image: mongo:latest

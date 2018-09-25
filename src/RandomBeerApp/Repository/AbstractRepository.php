@@ -6,6 +6,7 @@ use Psr\Log\InvalidArgumentException;
 use RandomBeerApp\Helper\Converter\ObjectToArray;
 use Interop\Container\ContainerInterface;
 use MongoDB\Client;
+use RandomBeerApp\Helper\PopulateObject;
 use RandomBeerApp\Model\Entity\FactoryInterface;
 use \Exception;
 
@@ -13,7 +14,7 @@ use \Exception;
  * Class AbstractRepository
  * @package RandomBeerApp\Repository
  */
-class AbstractRepository
+abstract class AbstractRepository
 {
     /**
      * @var Client
@@ -41,6 +42,11 @@ class AbstractRepository
     private $objectFactory;
 
     /**
+     * @var PopulateObject
+     */
+    private $populateObj;
+
+    /**
      * AbstractRepository constructor.
      * @param ContainerInterface $container
      * @param $collectionName
@@ -51,9 +57,10 @@ class AbstractRepository
         $collectionName,
         $objectFactory
     ) {
-        $this->mongoDbClient = $container->get('mongoDbClient');
+        $this->mongoDbClient = $container->get('mongo_client');
         $this->dbName = $container->get('settings')['db']['db_name'];
         $this->objectConverter = $container->get('converter');
+        $this->populateObj = $container->get("populate_obj");
         $this->collectionName = $collectionName;
         $this->objectFactory = $objectFactory;
     }
@@ -68,6 +75,7 @@ class AbstractRepository
             throw new InvalidArgumentException('The argument must be an object');
         }
         $arrayData = $this->objectConverter->convert($object);
+        unset($arrayData['id']);
         try {
             $this->getCollection()->insertOne($arrayData);
         } catch (Exception $e) {
@@ -84,11 +92,7 @@ class AbstractRepository
     {
         $data = $this->getCollection()->findOne(['_id' => $id]);
         $object = $this->objectFactory->create();
-        foreach ($data as $key => $value) {
-            $key = ($key !== "_id") ? $key : "id";
-            $key = ucfirst($key);
-            $object->{"set{$key}"}($value);
-        }
+        $object = $this->populateObj->populate($object, $data);
         return $object;
     }
 
@@ -128,7 +132,7 @@ class AbstractRepository
     /**
      * @return \MongoDB\Collection
      */
-    private function getCollection()
+    protected function getCollection()
     {
         return $this->mongoDbClient->{$this->dbName}->{$this->collectionName};
     }

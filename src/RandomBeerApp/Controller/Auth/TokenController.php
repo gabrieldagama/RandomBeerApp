@@ -5,6 +5,7 @@ namespace RandomBeerApp\Controller\Auth;
 use Interop\Container\ContainerInterface;
 use RandomBeerApp\Controller\AbstractController;
 use RandomBeerApp\Model\Api\ResponseBodyBuilder;
+use RandomBeerApp\Service\Token\BeerService;
 use RandomBeerApp\Service\Token\TokenService;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -29,7 +30,7 @@ class TokenController extends AbstractController
     public function __construct(ContainerInterface $container)
     {
         parent::__construct($container);
-        $this->tokenService = $container->get('token');
+        $this->tokenService = $container->get('token_service');
     }
 
     /**
@@ -48,7 +49,7 @@ class TokenController extends AbstractController
             'token' => $this->tokenService->generateToken()
         ]);
         $responseBody = $this->responseBodyBuilder->build();
-        $response = $response->withJson($responseBody->toArray(), self::HTTP_CREATED);
+        $response = $response->withJson($this->objectToArrayConverter->convert($responseBody), self::HTTP_CREATED);
         return $response;
     }
 }
