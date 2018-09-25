@@ -5,7 +5,7 @@ namespace RandomBeerApp\Controllers\Auth;
 use Interop\Container\ContainerInterface;
 use RandomBeerApp\Controllers\AbstractController;
 use RandomBeerApp\Models\Api\ResponseBodyBuilder;
-use RandomBeerApp\Services\Auth\AuthService;
+use RandomBeerApp\Services\Token\TokenService;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -18,9 +18,9 @@ class TokenController extends AbstractController
     const SUCCESS_MSG = "Token created successfully.";
 
     /**
-     * @var AuthService;
+     * @var TokenService;
      */
-    private $authService;
+    private $tokenService;
 
     /**
      * TokenController constructor.
@@ -29,7 +29,7 @@ class TokenController extends AbstractController
     public function __construct(ContainerInterface $container)
     {
         parent::__construct($container);
-        $this->authService = $container->get('auth');
+        $this->tokenService = $container->get('token');
     }
 
     /**
@@ -45,7 +45,7 @@ class TokenController extends AbstractController
         $this->responseBodyBuilder->setStatus(self::SUCCESS_STATUS);
         $this->responseBodyBuilder->setMessage(self::SUCCESS_MSG);
         $this->responseBodyBuilder->setData([
-            'token' => $this->authService->generateToken()
+            'token' => $this->tokenService->generateToken()
         ]);
         $responseBody = $this->responseBodyBuilder->build();
         $response = $response->withJson($responseBody->toArray(), self::HTTP_CREATED);

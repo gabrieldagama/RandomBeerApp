@@ -3,7 +3,7 @@
 
 $container = $app->getContainer();
 
-$container->register(new \RandomBeerApp\Services\Auth\AuthServiceProvider());
+$container->register(new \RandomBeerApp\Services\Token\TokenServiceProvider());
 
 // view renderer
 $container['renderer'] = function ($c) {
