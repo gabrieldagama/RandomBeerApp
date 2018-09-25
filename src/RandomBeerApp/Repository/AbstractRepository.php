@@ -7,6 +7,7 @@ use RandomBeerApp\Helper\Converter\ObjectToArray;
 use Interop\Container\ContainerInterface;
 use MongoDB\Client;
 use RandomBeerApp\Helper\PopulateObject;
+use RandomBeerApp\Model\Entity\Beverage;
 use RandomBeerApp\Model\Entity\FactoryInterface;
 use \Exception;
 
@@ -86,9 +87,9 @@ abstract class AbstractRepository
 
     /**
      * @param $id
-     * @return object
+     * @return Beverage
      */
-    public function get($id): object
+    public function get($id): Beverage
     {
         $data = $this->getCollection()->findOne(['_id' => $id]);
         $object = $this->objectFactory->create();
@@ -134,6 +135,8 @@ abstract class AbstractRepository
      */
     protected function getCollection()
     {
-        return $this->mongoDbClient->{$this->dbName}->{$this->collectionName};
+        return $this->mongoDbClient
+            ->selectDatabase($this->dbName)
+            ->selectCollection($this->collectionName);
     }
 }

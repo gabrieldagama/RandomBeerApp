@@ -2,8 +2,6 @@
 
 namespace RandomBeerApp\Helper;
 
-use Psr\Log\InvalidArgumentException;
-
 /**
  * Class ObjectToArray
  * @package RandomBeerApp\Helper\Converter

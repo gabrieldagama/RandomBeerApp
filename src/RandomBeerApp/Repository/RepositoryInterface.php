@@ -2,6 +2,8 @@
 
 namespace RandomBeerApp\Repository;
 
+use RandomBeerApp\Model\Entity\Beverage;
+
 /**
  * Interface RepositoryInterface
  * @package RandomBeerApp\Repository
@@ -16,9 +18,9 @@ interface RepositoryInterface
 
     /**
      * @param $id
-     * @return object
+     * @return Beverage
      */
-    public function get($id): object;
+    public function get($id): Beverage;
 
     /**
      * @param $id
