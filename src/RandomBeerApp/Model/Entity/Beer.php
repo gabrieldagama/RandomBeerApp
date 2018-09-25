@@ -22,7 +22,7 @@ class Beer implements Beverage
      */
     private $description;
     /**
-     * @var int
+     * @var float
      */
     private $abv;
     /**
@@ -81,7 +81,7 @@ class Beer implements Beverage
     /**
      * @return int
      */
-    public function getAbv(): int
+    public function getAbv(): float
     {
         return $this->abv;
     }

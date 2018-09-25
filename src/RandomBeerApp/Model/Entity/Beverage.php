@@ -24,9 +24,9 @@ interface Beverage
     public function getDescription(): string;
 
     /**
-     * @return int
+     * @return float
      */
-    public function getAbv(): int;
+    public function getAbv(): float;
 
     /**
      * @return string

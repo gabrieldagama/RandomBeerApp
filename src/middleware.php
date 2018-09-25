@@ -9,6 +9,8 @@ $settings = $container->get('settings');
  */
 $app->add(new Tuupola\Middleware\JwtAuthentication([
     "path" => "/v1",
+    "relaxed" => ["localhost", "web"],
+    "secure" => true,
     "ignore" => ["/v1/auth/token"],
     "secret" => $settings['jwt']['secret']
 ]));
@@ -18,6 +20,8 @@ $app->add(new Tuupola\Middleware\JwtAuthentication([
  */
 $app->add(new Tuupola\Middleware\HttpBasicAuthentication([
     "path" => "/v1/auth/token",
+    "relaxed" => ["localhost", "web"],
+    "secure" => true,
     "realm" => "Protected",
     "users" => [
         $settings['auth']['username'] => $settings['auth']['password']

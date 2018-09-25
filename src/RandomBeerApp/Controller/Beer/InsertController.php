@@ -46,7 +46,7 @@ class InsertController extends AbstractController
             $responseBody = $this->responseBodyBuilder->build();
             $response = $response->withJson(
                 $this->objectToArrayConverter->convert($responseBody),
-                self::HTTP_INTERNAL_SERVER_ERROR
+                self::HTTP_CREATED
             );
             return $response;
         }

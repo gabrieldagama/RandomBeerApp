@@ -42,7 +42,7 @@ class RandomController extends AbstractController
          * @var ResponseBodyBuilder $responseBodyBuilder
          */
         $this->responseBodyBuilder->setStatus(self::SUCCESS_STATUS);
-        $this->responseBodyBuilder->setMessage('Random Beer returned.');
+        $this->responseBodyBuilder->setMessage('Random Beer found.');
         $this->responseBodyBuilder->setData($this->objectToArrayConverter->convert($beer));
         $responseBody = $this->responseBodyBuilder->build();
         $response = $response->withJson(
