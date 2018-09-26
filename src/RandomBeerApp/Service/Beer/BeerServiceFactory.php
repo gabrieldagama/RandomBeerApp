@@ -14,7 +14,7 @@ class BeerServiceFactory
      * @param ContainerInterface $container
      * @return BeerService
      */
-    public static function create(ContainerInterface $container)
+    public static function create(ContainerInterface $container): BeerService
     {
         return new BeerService($container);
     }

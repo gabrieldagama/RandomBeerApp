@@ -18,7 +18,7 @@ class TokenGenerator
      * @param $apiUser
      * @return string
      */
-    public static function generateToken($secretKey, $appUrl, $apiUser)
+    public static function generateToken($secretKey, $appUrl, $apiUser): string
     {
         $now = new \DateTime();
         $future = new \DateTime('now +2 hours');

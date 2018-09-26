@@ -13,7 +13,7 @@ class TokenServiceFactory
      * @param $settings
      * @return TokenService
      */
-    public static function create($settings)
+    public static function create($settings): TokenService
     {
         return new TokenService($settings);
     }

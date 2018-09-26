@@ -27,7 +27,7 @@ class TokenService
     /**
      * @return string
      */
-    public function generateToken()
+    public function generateToken(): string
     {
         return TokenGenerator::generateToken(
             $this->settings['jwt']['secret'],
