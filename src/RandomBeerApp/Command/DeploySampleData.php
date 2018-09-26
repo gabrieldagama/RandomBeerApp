@@ -91,7 +91,7 @@ class DeploySampleData extends Command
         ];
         $res = $this->getClient()->request('POST', self::BEER_INSERT_URL, $options);
         if ($res->getStatusCode() !== 201) {
-            throw new \Exception('Token generation failed. Stopping process.');
+            throw new \Exception('Insert beer process failed. Stopping process.');
         }
         return true;
     }
