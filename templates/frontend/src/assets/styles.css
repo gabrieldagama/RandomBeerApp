@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body .App{
+  width: 800px;
+  margin: 0 auto;
+}
+body header.App-header {
+  height: 130px;
+  background-color: #eadeb3;
+}
+body header.App-header button{
+  float: right;
+  margin: 43px;
+  height: 45px;
+  width: 160px;
+  background-color: #ffbc00;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+body header.App-header h1.App-title{
+  float:left;
+  margin: 45px 20px 45px 50px
+}
+body .App-body {
+  margin-top:10px;
+}
+body .App-body .left-container{
+  float:left;
+  width:256px;
+}
+body .App-body .right-container{
+  float:left;
+  width:544px;
+}
+.beer-data {
+  margin-left:20px;
+}
+.beer-data .beer-name h2 {
+  margin:0;
+}
+.beer-data .beer-name {
+  padding: 20px;
+  background-color: #eadeb3;
+  height: 35px;
+}
+.beer-data .beer-details {
+  margin-top: 10px;
+  background-color: #eadeb3;
+  padding: 20px;
+}
+.beer-data .beer-details label{
+  font-weight: bold;
+}
