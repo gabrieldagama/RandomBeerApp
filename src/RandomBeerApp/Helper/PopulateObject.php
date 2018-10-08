@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace RandomBeerApp\Helper;
 
@@ -18,6 +19,7 @@ class PopulateObject
     public function populate(AbstractEntity $object, array $data): AbstractEntity
     {
         foreach ($data as $key => $value) {
+            $value = ($key !== '_id') ? $value : (string)$value;
             $key = ($key !== '_id') ? $key : 'id';
             $key = ucfirst($key);
             $object->{"set{$key}"}($value);

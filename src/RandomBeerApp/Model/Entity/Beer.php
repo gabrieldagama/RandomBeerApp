@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace RandomBeerApp\Model\Entity;
 
@@ -9,7 +10,7 @@ namespace RandomBeerApp\Model\Entity;
 class Beer extends AbstractEntity implements Beverage
 {
     /**
-     * @var string
+     * @var string|object
      */
     private $id;
     /**

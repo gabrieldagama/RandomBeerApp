@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace RandomBeerApp\Model\Api;
 
@@ -9,7 +10,7 @@ namespace RandomBeerApp\Model\Api;
 class ResponseBody
 {
     /**
-     * @var bool
+     * @var string
      */
     private $status;
 
@@ -24,17 +25,17 @@ class ResponseBody
     private $message;
 
     /**
-     * @return bool
+     * @return string
      */
-    public function getStatus(): bool
+    public function getStatus(): string
     {
         return $this->status;
     }
 
     /**
-     * @param bool $status
+     * @param string $status
      */
-    public function setStatus(bool $status)
+    public function setStatus(string $status)
     {
         $this->status = $status;
     }

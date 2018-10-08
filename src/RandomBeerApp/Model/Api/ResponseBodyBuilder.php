@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace RandomBeerApp\Model\Api;
 
@@ -40,9 +41,9 @@ class ResponseBodyBuilder
     }
 
     /**
-     * @param bool $status
+     * @param string $status
      */
-    public function setStatus(bool $status)
+    public function setStatus(string $status)
     {
         $this->responseBody->setStatus($status);
     }

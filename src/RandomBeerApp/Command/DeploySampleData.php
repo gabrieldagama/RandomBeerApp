@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace RandomBeerApp\Command;
 
@@ -83,7 +84,7 @@ class DeploySampleData extends Command
      * @return bool
      * @throws \Exception
      */
-    private function insertBeer($data, $token)
+    private function insertBeer($data, $token): bool
     {
         $options = [
             'headers' => ['Authorization' => "Bearer {$token}"],
@@ -100,7 +101,7 @@ class DeploySampleData extends Command
      * @return string
      * @throws \Exception
      */
-    private function getToken()
+    private function getToken(): string
     {
         $res = $this->getClient()->request('GET', self::TOKEN_SERVICE_URL, [
             'auth' => ['apiuser', 'apipwd']
@@ -115,7 +116,7 @@ class DeploySampleData extends Command
     /**
      * @return Client
      */
-    private function getClient()
+    private function getClient(): Client
     {
         if (!$this->httpClient instanceof Client) {
             $this->httpClient = new Client();
