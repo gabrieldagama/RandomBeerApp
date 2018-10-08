@@ -37,7 +37,9 @@ class InsertController extends AbstractController
      */
     public function execute(Request $request, Response $response): Response
     {
-        $result = $this->beerService->createBeer($request->getParsedBody());
+        $jsonBody = $request->getBody()->getContents();
+        $data = json_decode($jsonBody, true);
+        $result = $this->beerService->createBeer($data);
         if ($result) {
             $this->responseBodyBuilder->setStatus(self::SUCCESS_STATUS);
             $this->responseBodyBuilder->setMessage('Beer created successfully.');

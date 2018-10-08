@@ -88,7 +88,7 @@ class DeploySampleData extends Command
     {
         $options = [
             'headers' => ['Authorization' => "Bearer {$token}"],
-            'form_params' => $data
+            'body' => json_encode($data)
         ];
         $res = $this->getClient()->request('POST', self::BEER_INSERT_URL, $options);
         if ($res->getStatusCode() !== 201) {
