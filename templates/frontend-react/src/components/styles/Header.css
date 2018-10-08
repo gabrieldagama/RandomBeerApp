@@ -1,0 +1,18 @@
+body header.App-header {
+  height: 130px;
+  background-color: #eadeb3;
+}
+body header.App-header button {
+  float: right;
+  margin: 43px;
+  height: 45px;
+  width: 160px;
+  background-color: #ffbc00;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+body header.App-header h1.App-title {
+  float: left;
+  margin: 45px 20px 45px 50px;
+}

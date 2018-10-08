@@ -1,0 +1,19 @@
+.beer-data {
+  margin-left: 20px;
+}
+.beer-data .beer-name h2 {
+  margin: 0;
+}
+.beer-data .beer-name {
+  padding: 20px;
+  background-color: #eadeb3;
+  height: 35px;
+}
+.beer-data .beer-details {
+  margin-top: 10px;
+  background-color: #eadeb3;
+  padding: 20px;
+}
+.beer-data .beer-details label {
+  font-weight: bold;
+}

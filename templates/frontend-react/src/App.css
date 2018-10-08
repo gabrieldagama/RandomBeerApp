@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body .App {
+  width: 800px;
+  margin: 0 auto;
+}
+body .App-body {
+  margin-top: 10px;
+}
+body .App-body .left-container {
+  float: left;
+  width: 256px;
+}
+body .App-body .right-container {
+  float: left;
+  width: 544px;
+}
