@@ -1,0 +1,14 @@
+{
+  "main.css": "/reactapp/static/css/main.aabc4f47.chunk.css",
+  "main.js": "/reactapp/static/js/main.71e909fb.chunk.js",
+  "main.js.map": "/reactapp/static/js/main.71e909fb.chunk.js.map",
+  "static/js/1.3a12163b.chunk.js": "/reactapp/static/js/1.3a12163b.chunk.js",
+  "static/js/1.3a12163b.chunk.js.map": "/reactapp/static/js/1.3a12163b.chunk.js.map",
+  "runtime~main.js": "/reactapp/static/js/runtime~main.75024734.js",
+  "runtime~main.js.map": "/reactapp/static/js/runtime~main.75024734.js.map",
+  "static/media/beer-icon.png": "/reactapp/static/media/beer-icon.a18759f5.png",
+  "static/css/main.aabc4f47.chunk.css.map": "/reactapp/static/css/main.aabc4f47.chunk.css.map",
+  "index.html": "/reactapp/index.html",
+  "precache-manifest.b9e4b40b6e8a0aca448d81e14a7484a1.js": "/reactapp/precache-manifest.b9e4b40b6e8a0aca448d81e14a7484a1.js",
+  "service-worker.js": "/reactapp/service-worker.js"
+}

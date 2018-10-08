@@ -1,7 +1,7 @@
 <template>
     <div class="App">
         <header class="App-header">
-            <h1 class="App-title">Random Beer App!</h1>
+            <h1 class="App-title">Vue Random Beer App!</h1>
             <button @click="getRandomBeer">Show another beer</button>
         </header>
         <div class="App-body">

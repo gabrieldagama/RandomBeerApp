@@ -18,7 +18,10 @@ Wait for composer to install the dependencies and once the containers are runnin
 
 (If the command above fails make sure that you run it with the php container name)
 
-Now you can access the application in your browser: http://localhost/app
+Now you can access the application in your browser: 
+
+- http://localhost/app for the Vue.js app
+- http://localhost/reactapp for the React app
 
 If you prefer you can also use the postman collection to try and test the endpoints in isolation from the frontend.
 
